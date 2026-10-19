@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скалолазіння</title>
+    <style>
+    
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        #intro {
+            background: url('https://nakipelo.ua/wp-content/uploads/2021/07/Screenshot_5.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .intro-content {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #main-text {
+            font-size: 3rem;
+            margin: 0;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            width: 0;
+            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #eaeaea;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #about, #gear, #routes, #blog {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <section id="intro">
+        <div class="intro-content">
+            <h1 id="main-text"></h1>
+            <p>Для отримання інформації, прокрутіть вниз.</p>
+        </div>
+    </section>
+
+    <main>
+        <section id="about">
+            <h2>Про скалолазіння</h2>
+            <p>Скалолазіння — це захоплюючий вид спорту, який поєднує фізичну активність, техніку і любов до природи.</p>
+        </section>
+        <section id="gear">
+            <h2>Екіпіровка</h2>
+            <p>Щоб почати, вам знадобляться: скальні туфлі, захисна система, карабіни та мотузка.</p>
+        </section>
+        <section id="routes">
+            <h2>Популярні маршрути</h2>
+            <p>Розповімо про найкращі маршрути для скалолазів усіх рівнів по всьому світу.</p>
+        </section>
+        <section id="blog">
+            <h2>Блог</h2>
+            <p>Читати історії, поради і тренування від професіоналів скалолазіння.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Сайт про скалолазіння. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        
+        window.onload = function () {
+            let text = "Ласкаво просимо у світ скалолазіння!";
+            let index = 0;
+            let element = document.getElementById('main-text');
+            
+            function typeWriter() {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
